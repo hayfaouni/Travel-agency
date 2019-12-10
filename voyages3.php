@@ -5,15 +5,34 @@ if (isset($_POST['search2']))
 {
     if ($_POST['search1'] == "")
     {
-        $listevoyages=$voyage1C->affichervoyags();
+        $listevoyages=$voyage1C->affichervoyagEs();
     }
     else 
     {
         $listevoyages=$voyage1C->rechercherListevoyages($_POST['search1']);
     }
 }
+
+else 
+if (isset($_POST['croissant'])) 
+{  
+        $listevoyages=$voyage1C->affichervoyagescroissant();
+    
+     
+    
+}
+
+else 
+if (isset($_POST['decroissant'])) 
+{  
+        $listevoyages=$voyage1C->affichervoyagesdecroissant();
+    
+     
+    
+}
 else
   $listevoyages=$voyage1C->affichervoyages();  
+
 
 //var_dump($listevoyages->fetchAll());
 ?>
@@ -345,7 +364,8 @@ else
 
                             <div class="popular-content">
                                 <h3><?PHP echo $row['lieu_retour']; ?></h3>
-                                <p><?PHP echo $row['description']; ?> </p>
+                                <p><?PHP echo substr( $row['description'],0,70);
+                                 if (strlen($row['description'])> 90) echo "... " ?> </p>
                                 <span>From <?PHP echo $row['prix']; ?>dinars</span>
 
                                 <div class="popular-icon">
@@ -397,6 +417,47 @@ else
                                 </button>
                             </form>
                         </div>
+
+                        <ul class="tours-where">
+                                <li>
+                                    <i class="flaticon-safari"></i>
+                                    Where To
+                                </li>
+
+                                <li class="text-left">
+                                    <i class="flaticon-calendar"></i>
+                                    Month
+                                </li>
+                            </ul>
+
+                            <div class="tours-price">
+                                <h3 style="text-align:center;">Filter By Price</h3>
+                                <p style="text-align:center;">Price: $450-$3600</p>
+
+                                <ul class="price-list">
+                                     <form method="post"> 
+                                    <div class="form-check">
+                                         <button type="submit" name="decroissant" class="form-control"  >
+                                   Prix :$$-$
+                                </button>  
+                                
+                                    <button type="submit" name="croissant" class="form-control" >
+                                  Prix :$-$$
+                                </button>  
+                                        
+                                    </div>
+                                </form>
+                                  
+                                    
+                                </ul>
+                                
+                                 
+
+                                   
+                                
+                                
+
+                            </div>
 
                     </div>
                 </div>

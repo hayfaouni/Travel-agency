@@ -446,23 +446,23 @@ echo$_SESSION['views'];
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
-                        <div class="tours-sidebar">
-                            <div class="sidebar-content">
-                                <h2>Plan Your Trip</h2>
-                                <p>It’s time to plan just the perfect vacation!</p>
-                            </div>
+                   <div class="col-lg-4">
+                    <div class="tours-sidebar">
+                        <div class="sidebar-content">
+                            <h2>Plan Your Trip</h2>
+                            <p>It’s time to plan just the perfect vacation!</p>
+                        </div>
 
-                            <div class="tours-form">
-                                <form>
-									<input type="text" class="form-control" placeholder="Search Tour">
-									<button type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-								</form>
-                            </div>
+                        <div class="tours-form">
+                            <form name="f1" method="post">
+                                <input type="text" class="form-control" placeholder="Search Voyage" name="search1">
+                                <button type="submit" name="search2">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
 
-                            <ul class="tours-where">
+                        <ul class="tours-where">
                                 <li>
                                     <i class="flaticon-safari"></i>
                                     Where To
@@ -475,52 +475,36 @@ echo$_SESSION['views'];
                             </ul>
 
                             <div class="tours-price">
-                                <h3>Filter By Price</h3>
-                                <p>Price: $450-$3600</p>
+                                <h3 style="text-align:center;">Filter By Price</h3>
+                                <p style="text-align:center;">Price: $450-$3600</p>
 
                                 <ul class="price-list">
+                                     <form method="post"> 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            Popular
-                                        </label>
+                                         <button type="submit" name="decroissant" class="form-control"  >
+                                   Prix :$$-$
+                                </button>  
+                                
+                                    <button type="submit" name="croissant" class="form-control" >
+                                  Prix :$-$$
+                                </button>  
+                                        
                                     </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                        <label class="form-check-label" for="exampleRadios2">
-                                            Latest
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option2">
-                                        <label class="form-check-label" for="exampleRadios3">
-                                            Europe
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option2">
-                                        <label class="form-check-label" for="exampleRadios4">
-                                            Wines
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option2">
-                                        <label class="form-check-label" for="exampleRadios5">
-                                            Trendd
-                                        </label>
-                                    </div>
+                                </form>
+                                  
+                                    
                                 </ul>
+                                
+                                 
+
+                                   
+                                
+                                
+
                             </div>
 
-                            <div class="tours-btn">
-                                <a href="#" class="tours-btn-one">Search</a>
-                            </div>
-                        </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -665,6 +649,10 @@ echo$_SESSION['views'];
                                         <textarea name="comment" cols="30" rows="5" class="form-control" placeholder="Comment" name="comment"></textarea>
                                     </div>
                                 </div>
+                                
+                                      
+                                  
+                                
 
                                 
                                 <div class="col-lg-12 col-md-12">
@@ -673,10 +661,10 @@ echo$_SESSION['views'];
                                         <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time.</label>
                                     </p> 
 
-                                    <div class="send-btn">
+                                    <div class="send-btn"> 
                                         
                                          <input type="hidden" value="<?PHP echo $emp['idVo']; ?>" name="idVo">
-                                         <input type="hidden" value="<?PHP echo $emp['idVo']; ?>" name="voyid">
+                                         
                                         <input class="send-btn-one" type="submit" name="ajouter" value="ajouter"  >
                                     </div>
                                 </div>
